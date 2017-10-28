@@ -1,0 +1,19 @@
+{
+  "name": "employee_001",
+  "version": "1.0.0",
+  "description": "mean app for employee",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "(https://github.com/bangna4/Employee_001.git)"
+  },
+  "author": "aloha dev",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.2",
+    "mongoose": "^4.12.4"
+  }
+}
