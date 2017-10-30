@@ -25,7 +25,7 @@ let validEmailChecker = (email) => {
     return false;
   } else {
     const regExp = new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
-    
+
     return regExp.test(email);
   }
 };
@@ -132,7 +132,7 @@ userSchema.pre('save', function(next) {
 });
 
 
-userSchema.methods.comparePassword = (password) => {
+userSchema.methods.comparePassword = function(password) {
   return bcrypt.compareSync(password, this.password);
 };
 
