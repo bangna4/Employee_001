@@ -51,8 +51,6 @@ module.exports = (router) => {
       }
     }
   });
-
-
   /* ============================================================
    Route to check if user's email is available for registration
 ============================================================ */
@@ -80,7 +78,7 @@ router.get('/checkEmail/:email', (req, res) => {
 /* ===============================================================
    Route to check if user's username is available for registration
 =============================================================== */
-router.get('/checkUsername/:username', (req, res) => {
+  router.get('/checkUsername/:username', (req, res) => {
   // Check if username was provided in paramaters
   if (!req.params.username) {
     res.json({ success: false, message: 'Username was not provided' }); // Return error
@@ -142,7 +140,7 @@ router.get('/checkUsername/:username', (req, res) => {
 
   /* ================================================
   MIDDLEWARE - Used to grab user's token from headers
-  ================================================ */
+  ================================================ 
   router.use((req, res, next) => {
     const token = req.headers['authorization']; // Create token found in headers
     // Check if token was found in headers
