@@ -15,6 +15,9 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { FlashMessagesModule } from 'ngx-flash-messages';
 import { AuthGuard } from './guards/auth.guard';
 import { NotAuthGuard } from './guards/notAuth.guard';
+import { EmployeeComponent } from './components/employee/employee.component';
+import { ProjectComponent } from './components/project/project.component';
+import { LeaveComponent } from './components/leave/leave.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,10 @@ import { NotAuthGuard } from './guards/notAuth.guard';
     DashboardComponent,
     RegisterComponent,
     LoginComponent,
-    ProfileComponent
+    ProfileComponent,
+    EmployeeComponent,
+    ProjectComponent,
+    LeaveComponent
   ],
   imports: [
     BrowserModule,
