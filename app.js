@@ -9,6 +9,7 @@ const config = require('./config/database'); // Mongoose Config
 const path = require('path'); // NodeJS Package for file paths
 const router = express.Router(); // Creates a new router object
  // Import Authentication Routes
+ const employee = require('./routes/employee_route')(router);
 const authentication = require('./routes/authentication')(router);
 // Parse incoming request bodies in a middleware before your handlers, available under the req.body property.
 const bodyParser = require('body-parser');
@@ -26,14 +27,15 @@ mongoose.connect(config.uri, (err) => {
 });
 
 //middleware
-+app.use(cors({ origin: 'http://localhost:4200' }));
+app.use(cors({ origin: 'http://localhost:4200' }));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
+
 
 // Provide static directory for frontend
 app.use(express.static(__dirname + '/client/dist/'));
 app.use('/authentication', authentication);
-
+app.use('/employee',employee);
 // Connect server to Angular  Index.html
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname + '/client/dist/index.html'));

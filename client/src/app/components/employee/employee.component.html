@@ -1,3 +1,298 @@
-<p>
-  employee works!
-</p>
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<h3 class="panel-header-pad inline-block" >Employee Form</h3>
+	</div>
+
+	<div class="row show-hide-message">
+	  <div [ngClass]="messageClass">
+	    {{ message }}
+	  </div>
+	</div>
+
+	<div class="panel-body">
+		<form [formGroup]="form" (submit)="onEmployeeSubmit()"  id="employee_form">
+
+		<div class="row">
+			<div class="col-sm-12">
+				<fieldset>
+					<legend>
+						<div id="image-preview" class='inline-block'>
+							<div class="align-bottom">
+								<!-- <label for="image-upload" id="image-label" class="btn-bs-file btn btn-xs btn-info">Choose File</label> -->
+								<!-- <input type="file" name="image" id="image-upload" class="form-control" required="required"/> -->
+								<!-- data-target="#editProfilePopUp" -->
+							</div>
+						</div>
+						<div class="pull-right">Personal Details:</div>
+					</legend>
+
+					<div class="col-sm-12">
+						<div class="col-sm-4">
+							<div class="form-group">
+								<label class="">First Name:</label>
+								<div class="input-group">
+									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+									<input name="first_name" formControlName="first_name" placeholder="First Name" class="form-control" type="text" required="required">
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="form-group">
+								<label class="" >Last Name:</label>
+								<div class="input-group">
+									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+									<input name="last_name" formControlName="last_name" placeholder="Last Name" class="form-control" type="text" required="required">
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="form-group">
+								<label class="">E-Mail:</label>
+								<div class="input-group">
+									<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+									<input name="email" formControlName="email" placeholder="E-Mail" class="form-control" type="email" required="required">
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-sm-12">
+						<div class="col-sm-4">
+							<div class="form-group">
+								<label class="">Phone:</label>
+								<div class="input-group">
+									<span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+									<input name="phone" placeholder="1234567890" formControlName="phone" class="form-control" type="text" required="required">
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="form-group">
+								<label class="">DOB:</label>
+								<div class='input-group date datePicker'>
+									<input type='text' name="dob" formControlName="dob" class="form-control" required="required">
+									<span class="input-group-addon">
+										<span class="glyphicon glyphicon-calendar"></span>
+									</span>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="form-group">
+								<label class="">Gender:</label>
+								<div class="col-md-8 pull-right">
+									<div class="form-check form-check-inline col-md-4">
+										<label class="form-check-label">
+											<input class="form-check-input" type="radio" name="gender" formControlName="gender" value="M" checked> Male
+										</label>
+									</div>
+									<div class="form-check form-check-inline col-md-4">
+										<label class="form-check-label">
+											<input class="form-check-input" type="radio" name="gender" formControlName="gender" value="F"> Female
+										</label>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-xs-12">
+						<hr class="hr-style" />
+					</div>
+
+					<div class="col-sm-12">
+						<div class="col-sm-4">
+							<div class="form-group">
+								<label class="">Employee ID:</label>
+								<div class="input-group">
+									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+									<input name="employee_id" formControlName="employee_id" placeholder="Employee ID" class="form-control" type="text" required="required">
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="form-group">
+								<label class="">Joining Date:</label>
+								<div class='input-group date datePicker'>
+									<input type='text' name = "joining_date" formControlName ="joining_date" class="form-control" required="required">
+									<span class="input-group-addon">
+										<span class="glyphicon glyphicon-calendar"></span>
+									</span>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="form-group">
+								<label class="">Skill Technology:</label>
+								<div class="input-group">
+									<span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
+									<input formControlName="skill" name="skill" placeholder="Skill Technology" class="form-control" type="text" required="required">
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-sm-12">
+						<div class="col-sm-4">
+							<div class="form-group">
+								<label class="">Designation:</label>
+								<div class="input-group">
+									<span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
+									<input  formControlName="designation" name="designation" placeholder="Designation" class="form-control" type="text" required="required">
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-xs-12">
+						<hr class="hr-style" />
+					</div>
+
+					<div class="col-sm-12">
+						<div class="col-sm-12">
+							<div class="form-group">
+								<label class="">Note and Interview Comments:</label>
+								<div class="input-group">
+									<span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+									<textarea class="form-control" name="interview_comments" formControlName="interview_comments" placeholder="Note and Interview Comments" required="required"></textarea>
+								</div>
+							</div>
+						</div>
+					</div>
+				</fieldset>
+			</div>
+		</div>
+		<br>
+		<div class="row">
+			<div class="col-sm-12">
+					<fieldset>
+						<legend>
+							<div id="image-preview2" class='inline-block'></div>
+							<div class="pull-right">Address Details:</div>
+						</legend>
+
+						<div class="col-sm-12 text-left">
+							<h4>Current Address:</h4>
+						</div>
+
+						<div class="col-sm-12">
+							<div class="col-sm-4">
+								<div class="form-group">
+									<label class="">Address:</label>
+									<div class="input-group">
+										<span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+										<textarea class="form-control" name="current_street" formControlName="current_street" placeholder="Address Detail" required="required"></textarea>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-4">
+								<div class="form-group">
+									<label class="">City:</label>
+									<div class="input-group">
+										<span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+										<input name="city" placeholder="City" name="current_city" formControlName="current_city" class="form-control" type="text">
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-4">
+								<div class="form-group">
+									<label class="">State:</label>
+									<div class="input-group">
+										<span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+										<select name="current_state" formControlName="current_state" class="form-control selectpicker" >
+											<option value="">Please select your state</option>
+											<option>Alabama</option>
+											<option>Alaska</option>
+											<option >Arizona</option>
+											<option >Arkansas</option>
+											<option >California</option>
+											<option >Colorado</option>
+											<option >Wyoming</option>
+										</select>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-12">
+							<div class="col-sm-4">
+								<div class="form-group">
+									<label class="">Zip Code:</label>
+									<div class="input-group">
+										<span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+										<input name="current_zip" formControlName= "current_zip" placeholder="Zip Code" class="form-control" type="text" required="required">
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-xs-12">
+							<hr class="hr-style" />
+						</div>
+
+						<div class="col-sm-12 text-left">
+							<h4>Permanent Address:</h4>
+						</div>
+
+						<div class="col-sm-12">
+							<div class="col-sm-4">
+								<div class="form-group">
+									<label class="">Address:</label>
+									<div class="input-group">
+										<span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+										<textarea class="form-control" formControlName= "permanent_street" name="permanent_address" placeholder="Address Detail" required="required"></textarea>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-4">
+								<div class="form-group">
+									<label class="">City:</label>
+									<div class="input-group">
+										<span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+										<input name="permanent_city" formControlName="permanent_city" placeholder="City" class="form-control" type="text">
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-4">
+								<div class="form-group">
+									<label class="">State:</label>
+									<div class="input-group">
+										<span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+										<select name="permanent_state" formControlName="permanent_state" class="form-control selectpicker" >
+											<option value="">Please select your state</option>
+											<option>Alabama</option>
+											<option>Alaska</option>
+											<option >Arizona</option>
+											<option >Arkansas</option>
+											<option >California</option>
+											<option >Colorado</option>
+											<option >Wyoming</option>
+										</select>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-sm-12">
+							<div class="col-sm-4">
+								<div class="form-group">
+									<label class="">Zip Code:</label>
+									<div class="input-group">
+										<span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+										<input name="permanent_zip" formControlName="permanent_zip" placeholder="Zip Code" class="form-control" type="text" required="required">
+									</div>
+								</div>
+							</div>
+						</div>
+					</fieldset>
+			</div>
+		</div>
+		<br>
+		<div class="row">
+			<div class="col-sm-12 text-center">
+							<input [disabled]="processing || !form.valid" type="submit" class="btn btn-primary" value="Submit" />
+
+			</div>
+		</div>
+		</form>
+	</div>
+</div>

@@ -1,0 +1,112 @@
+.panel {
+  border-radius: 2px;
+}
+
+.panel-heading {
+  display: block !important;
+  border-radius: 2px;
+}
+.inline-block{
+  display: inline-block !important;
+}
+
+.table-cell {
+  display: table-cell !important; width: 100% !important;
+}
+
+.border-radius {
+  border-radius: 4px;
+}
+
+#employee_table {
+  width: 99%;
+}
+
+.fa-star.checked {
+  color: orange;
+}
+
+legend > .pull-right {
+  margin-right: 15px;
+}
+
+#employee_form fieldset {
+  border: 1px solid #ddd !important;
+  margin: 0;
+  xmin-width: 0;
+  padding: 10px;
+  position: relative;
+  border-radius: 2px;
+  background-color:#f5f5f5;
+  padding-left:10px!important;
+}
+#employee_form legend {
+  font-size:14px;
+  font-weight:bold;
+  margin-bottom: 0px;
+  width: 22%;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  padding: 5px 5px 5px 10px;
+  background-color: lightgray;
+}
+
+#image-preview {
+  background-image: url("/assets/images/default_profile.png");
+}
+
+#image-preview2 {
+  background-image: url("/assets/images/address_icon.png");
+}
+
+#image-preview3 {
+  background-image: url("/assets/images/project_history_icon.png");
+}
+
+#image-preview4 {
+  background-image: url("/assets/images/team_members_icon.jpg");
+}
+
+div[id^="image-preview"] {
+  width: 80px;
+  height: 80px;
+  position: relative;
+  overflow: hidden;
+  background-color: #ffffff;
+  color: #ecf0f1;
+  background-size: 80px 80px;
+  background-repeat: no-repeat;
+}
+
+#image-preview input {
+  line-height: 200px;
+  font-size: 200px;
+  position: absolute;
+  opacity: 0;
+  z-index: 10;
+}
+
+#image-preview label {
+  position: absolute;
+  z-index: 5;
+  opacity: 0;
+  cursor: pointer;
+  background-color: #bdc3c7;
+  width: 80px;
+  height: 80px;
+  font-size: 10px;
+  line-height: 50px;
+  text-transform: uppercase;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  text-align: center;
+}
+
+#imagepreview {
+  width: 250px;
+  height: 250px;
+  border-radius: 5px;
+}

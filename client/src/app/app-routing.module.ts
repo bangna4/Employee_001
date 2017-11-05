@@ -5,6 +5,11 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { EmployeeComponent } from './components/employee/employee.component';
+import { ProjectComponent } from './components/project/project.component';
+import { LeaveComponent } from './components/leave/leave.component';
+
+
 import { AuthGuard } from './guards/auth.guard';
 import { NotAuthGuard } from './guards/notAuth.guard';
 
@@ -19,6 +24,22 @@ const appRoutes: Routes = [
     component: DashboardComponent,
     canActivate: [AuthGuard]
   },
+  {
+    path: 'employee',
+    component: EmployeeComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'project',
+    component: ProjectComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'leave',
+    component: LeaveComponent,
+    canActivate: [AuthGuard]
+  },
+
   {
     path: 'register',
     component: RegisterComponent,
