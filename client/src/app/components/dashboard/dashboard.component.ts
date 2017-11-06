@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { DataTablesModule } from 'angular-datatables';
+import { EmployeeServiceService } from '../../services/employee-service.service';
+
+
 declare var $;
 
 @Component({
@@ -7,13 +11,16 @@ declare var $;
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-
-  constructor() { }
-
+  public data: Object;
+  public temp_var: Object=false;
+  constructor(
+  	private employeeService: EmployeeServiceService
+  	) {}
   ngOnInit(): void {
-    $(function(){
-      $('#employee_table').DataTable();
-    })
+   this.employeeService.list_employee().subscribe(list => {
+       this.data=list;
+      this.temp_var=true;
+    });
   }
 
 }

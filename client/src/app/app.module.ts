@@ -3,6 +3,12 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { DataTablesModule } from 'angular-datatables';
+import { CommonModule } from '@angular/common';
+
+
+
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -41,7 +47,9 @@ import { LeaveComponent } from './components/leave/leave.component';
     HttpModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    FlashMessagesModule
+    FlashMessagesModule,
+    DataTablesModule,
+    CommonModule
   ],
   providers: [AuthService,AuthGuard, NotAuthGuard,EmployeeServiceService],
   bootstrap: [AppComponent]
