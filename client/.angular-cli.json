@@ -20,12 +20,14 @@
       "prefix": "app",
       "styles": [
           "../node_modules/bootstrap/dist/css/bootstrap.min.css",
+          "assets/DataTables/DataTables-1.10.16/css/dataTables.bootstrap.css",
         "styles.css"
       ],
       "scripts": [
         "../node_modules/jquery/dist/jquery.min.js",
-       "../node_modules/popper.js/dist/umd/popper.min.js",
+        "../node_modules/popper.js/dist/umd/popper.min.js",
         "../node_modules/bootstrap/dist/js/bootstrap.min.js",
+        "assets/DataTables/DataTables-1.10.16/js/dataTables.bootstrap.js",
         "globel.js"
       ],
       "environmentSource": "environments/environment.ts",

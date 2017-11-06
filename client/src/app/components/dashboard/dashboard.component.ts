@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+declare var $;
 
 @Component({
   selector: 'app-dashboard',
@@ -9,7 +10,10 @@ export class DashboardComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    $(function(){
+      $('#employee_table').DataTable();
+    })
   }
 
 }

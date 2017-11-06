@@ -14,6 +14,7 @@
   "author": "aloha dev",
   "license": "ISC",
   "dependencies": {
+    "angular-4-data-table": "^0.2.3",
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.18.2",
     "cors": "^2.8.4",
