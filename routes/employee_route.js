@@ -37,12 +37,11 @@ module.exports = (router) => {
    employee.save((err) => {
    		if(err)
    		{
-        console.log(err);
-   			res.json({msg: 'failed to add employee'});
+   			res.json({success: false,message: 'failed to add employee'});
    		}
    		else
    		{
-   		  res.json({msg: 'employee added successfully'});
+        res.json({ success: true, message: 'Acount registered!' });
    		}
    	});
 

@@ -10,7 +10,7 @@
 	</div>
 
 	<div class="panel-body">
-		<form [formGroup]="form" (submit)="onEmployeeSubmit()"  id="employee_form">
+		<form (submit)="onEmployeeSubmit()"  id="employee_form">
 
 		<div class="row">
 			<div class="col-sm-12">
@@ -32,7 +32,7 @@
 								<label class="">First Name:</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-									<input name="first_name" formControlName="first_name" placeholder="First Name" class="form-control" type="text" required="required">
+									<input name="first_name" [(ngModel)]="first_name" placeholder="First Name" class="form-control" type="text" required="required">
 								</div>
 							</div>
 						</div>
@@ -41,7 +41,7 @@
 								<label class="" >Last Name:</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-									<input name="last_name" formControlName="last_name" placeholder="Last Name" class="form-control" type="text" required="required">
+									<input name="last_name" [(ngModel)]="last_name" placeholder="Last Name" class="form-control" type="text" required="required">
 								</div>
 							</div>
 						</div>
@@ -50,7 +50,7 @@
 								<label class="">E-Mail:</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-									<input name="email" formControlName="email" placeholder="E-Mail" class="form-control" type="email" required="required">
+									<input name="email" [(ngModel)]="email" placeholder="E-Mail" class="form-control" type="email" required="required">
 								</div>
 							</div>
 						</div>
@@ -62,7 +62,7 @@
 								<label class="">Phone:</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-									<input name="phone" placeholder="1234567890" formControlName="phone" class="form-control" type="text" required="required">
+									<input  [(ngModel)]="mob" name="mob" placeholder="1234567890" class="form-control" type="text" required="required">
 								</div>
 							</div>
 						</div>
@@ -70,7 +70,7 @@
 							<div class="form-group">
 								<label class="">DOB:</label>
 								<div class='input-group date datePicker'>
-									<input type='text' name="dob" formControlName="dob" class="form-control" required="required">
+									<input type='text' name="dob" [(ngModel)]="dob" class="form-control" required="required">
 									<span class="input-group-addon">
 										<span class="glyphicon glyphicon-calendar"></span>
 									</span>
@@ -83,12 +83,12 @@
 								<div class="col-md-8 pull-right">
 									<div class="form-check form-check-inline col-md-4">
 										<label class="form-check-label">
-											<input class="form-check-input" type="radio" name="gender" formControlName="gender" value="M" checked> Male
+											<input class="form-check-input" type="radio" name="gender" [(ngModel)]="gender" value="M" checked> Male
 										</label>
 									</div>
 									<div class="form-check form-check-inline col-md-4">
 										<label class="form-check-label">
-											<input class="form-check-input" type="radio" name="gender" formControlName="gender" value="F"> Female
+											<input class="form-check-input" type="radio" name="gender" [(ngModel)]="gender" value="F"> Female
 										</label>
 									</div>
 								</div>
@@ -106,7 +106,7 @@
 								<label class="">Employee ID:</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-									<input name="employee_id" formControlName="employee_id" placeholder="Employee ID" class="form-control" type="text" required="required">
+									<input name="employee_id" [(ngModel)]="employee_id" placeholder="Employee ID" class="form-control" type="text" required="required">
 								</div>
 							</div>
 						</div>
@@ -114,7 +114,7 @@
 							<div class="form-group">
 								<label class="">Joining Date:</label>
 								<div class='input-group date datePicker'>
-									<input type='text' name = "joining_date" formControlName ="joining_date" class="form-control" required="required">
+									<input type='text' name = "joining_date" [(ngModel)] ="joining_date" class="form-control" required="required">
 									<span class="input-group-addon">
 										<span class="glyphicon glyphicon-calendar"></span>
 									</span>
@@ -126,7 +126,7 @@
 								<label class="">Skill Technology:</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
-									<input formControlName="skill" name="skill" placeholder="Skill Technology" class="form-control" type="text" required="required">
+									<input [(ngModel)]="skill" name="skill" placeholder="Skill Technology" class="form-control" type="text" required="required">
 								</div>
 							</div>
 						</div>
@@ -138,7 +138,7 @@
 								<label class="">Designation:</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
-									<input  formControlName="designation" name="designation" placeholder="Designation" class="form-control" type="text" required="required">
+									<input  [(ngModel)]="designation" name="designation" placeholder="Designation" class="form-control" type="text" required="required">
 								</div>
 							</div>
 						</div>
@@ -154,7 +154,7 @@
 								<label class="">Note and Interview Comments:</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-									<textarea class="form-control" name="interview_comments" formControlName="interview_comments" placeholder="Note and Interview Comments" required="required"></textarea>
+									<textarea class="form-control" name="interview_comments" [(ngModel)]="interview_comments" placeholder="Note and Interview Comments" required="required"></textarea>
 								</div>
 							</div>
 						</div>
@@ -181,7 +181,7 @@
 									<label class="">Address:</label>
 									<div class="input-group">
 										<span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-										<textarea class="form-control" name="current_street" formControlName="current_street" placeholder="Address Detail" required="required"></textarea>
+										<textarea class="form-control" name="current_street" [(ngModel)]="current_street" placeholder="Address Detail" required="required"></textarea>
 									</div>
 								</div>
 							</div>
@@ -190,7 +190,7 @@
 									<label class="">City:</label>
 									<div class="input-group">
 										<span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-										<input name="city" placeholder="City" name="current_city" formControlName="current_city" class="form-control" type="text">
+										<input name="city" placeholder="City" name="current_city" [(ngModel)]="current_city" class="form-control" type="text">
 									</div>
 								</div>
 							</div>
@@ -199,7 +199,7 @@
 									<label class="">State:</label>
 									<div class="input-group">
 										<span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-										<select name="current_state" formControlName="current_state" class="form-control selectpicker" >
+										<select name="current_state" [(ngModel)]="current_state" class="form-control selectpicker" >
 											<option value="">Please select your state</option>
 											<option>Alabama</option>
 											<option>Alaska</option>
@@ -219,7 +219,7 @@
 									<label class="">Zip Code:</label>
 									<div class="input-group">
 										<span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-										<input name="current_zip" formControlName= "current_zip" placeholder="Zip Code" class="form-control" type="text" required="required">
+										<input name="current_zip" [(ngModel)]= "current_zip" placeholder="Zip Code" class="form-control" type="text" required="required">
 									</div>
 								</div>
 							</div>
@@ -239,7 +239,7 @@
 									<label class="">Address:</label>
 									<div class="input-group">
 										<span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-										<textarea class="form-control" formControlName= "permanent_street" name="permanent_address" placeholder="Address Detail" required="required"></textarea>
+										<textarea class="form-control" [(ngModel)]= "permanent_street" name="permanent_address" placeholder="Address Detail" required="required"></textarea>
 									</div>
 								</div>
 							</div>
@@ -248,7 +248,7 @@
 									<label class="">City:</label>
 									<div class="input-group">
 										<span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-										<input name="permanent_city" formControlName="permanent_city" placeholder="City" class="form-control" type="text">
+										<input name="permanent_city" [(ngModel)]="permanent_city" placeholder="City" class="form-control" type="text">
 									</div>
 								</div>
 							</div>
@@ -257,7 +257,7 @@
 									<label class="">State:</label>
 									<div class="input-group">
 										<span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-										<select name="permanent_state" formControlName="permanent_state" class="form-control selectpicker" >
+										<select name="permanent_state" [(ngModel)]="permanent_state" class="form-control selectpicker" >
 											<option value="">Please select your state</option>
 											<option>Alabama</option>
 											<option>Alaska</option>
@@ -278,7 +278,7 @@
 									<label class="">Zip Code:</label>
 									<div class="input-group">
 										<span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-										<input name="permanent_zip" formControlName="permanent_zip" placeholder="Zip Code" class="form-control" type="text" required="required">
+										<input name="permanent_zip" [(ngModel)]="permanent_zip" placeholder="Zip Code" class="form-control" type="text" required="required">
 									</div>
 								</div>
 							</div>
@@ -289,7 +289,7 @@
 		<br>
 		<div class="row">
 			<div class="col-sm-12 text-center">
-							<input [disabled]="processing || !form.valid" type="submit" class="btn btn-primary" value="Submit" />
+							<input type="submit" class="btn btn-primary" value="Submit" />
 
 			</div>
 		</div>
