@@ -27,6 +27,7 @@ import { NotAuthGuard } from './guards/notAuth.guard';
 import { EmployeeComponent } from './components/employee/employee.component';
 import { ProjectComponent } from './components/project/project.component';
 import { LeaveComponent } from './components/leave/leave.component';
+import { EmployeeListComponent } from './components/employee-list/employee-list.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { LeaveComponent } from './components/leave/leave.component';
     ProfileComponent,
     EmployeeComponent,
     ProjectComponent,
-    LeaveComponent
+    LeaveComponent,
+    EmployeeListComponent
   ],
   imports: [
     BrowserModule,

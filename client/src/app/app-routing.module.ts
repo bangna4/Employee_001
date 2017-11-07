@@ -8,6 +8,8 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { EmployeeComponent } from './components/employee/employee.component';
 import { ProjectComponent } from './components/project/project.component';
 import { LeaveComponent } from './components/leave/leave.component';
+import { EmployeeListComponent} from './components/employee-list/employee-list.component';
+
 
 
 import { AuthGuard } from './guards/auth.guard';
@@ -22,6 +24,11 @@ const appRoutes: Routes = [
   {
     path: 'dashboard',
     component: DashboardComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'employee-list',
+    component: EmployeeListComponent,
     canActivate: [AuthGuard]
   },
   {

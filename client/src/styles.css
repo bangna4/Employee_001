@@ -110,3 +110,33 @@ div[id^="image-preview"] {
   height: 250px;
   border-radius: 5px;
 }
+
+
+
+.main-body{
+	margin-top: 90px;
+}
+
+.panel-header-pad{
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+}
+
+.br-space{
+  margin-bottom: 2em;
+}
+
+.hr-primary{
+  background-image: -webkit-linear-gradient(left, rgba(66,133,244,.8), rgba(66, 133, 244,.6), rgba(0,0,0,0));
+}
+
+.hr-style {
+	border-top: 2px solid #AAAAAA;
+	margin-left: 5%;
+	margin-right: 15%;
+}
+
+.thead-inverse th {
+    color: #fff;
+    background-color: #292b2c;
+}

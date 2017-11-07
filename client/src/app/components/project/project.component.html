@@ -1,3 +1,112 @@
-<p>
-  project works!
-</p>
+<div class="panel panel-primary">
+  <div class="panel-heading ">
+      <h3 class="panel-header-pad">Project List<button class="btn btn-default btn-sm inline-block pull-right" data-toggle="modal" data-target="#applyPopUp">Add Project</button> </h3>
+      </div>
+<div class="panel-body">
+<div class="table-responsive">
+<table datatable class="table table-bordered" id="employee_table" *ngIf="this.temp_var">
+  <thead>
+    <tr>
+      <th>Project_id</th>
+      <th>Title</th>
+      <th>Billable Resource</th>
+      <th>Status</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let rec of this.data">
+      <td>{{rec.employee_id}}</td>
+      <td>{{rec.first_name}} {{rec.last_name}}</td>
+      <td>{{rec.email}}</td>
+      <td>Working</td>
+      <td align="center">
+          <button class="btn btn-success" data-toggle="modal" data-target="#applyPopUp">View team </button>
+          <button class="btn btn-danger" data-toggle="modal" data-target="#applyPopUp"> Lead </button>
+          <button class="btn btn-success" data-toggle="modal" data-target="#applyPopUp"> Manager </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+<div id="applyPopUp" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
+	<form action="post" method="" id="leave_form">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="gridSystemModalLabel">Leave Details</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+					<div class="col-sm-12">
+        		<div class="form-group row">
+        			<label class="col-sm-3 col-form-label">Leave From:</label>
+        			<div class="col-sm-5">
+	        			<div class='input-group date datePicker'>
+	        				<input type='text' class="form-control" required="required">
+	        				<span class="input-group-addon">
+	        					<span class="glyphicon glyphicon-calendar"></span>
+	        				</span>
+	        			</div>
+	        		</div>
+        		</div>
+        	</div>
+					<div class="col-sm-12">
+        		<div class="form-group row">
+        			<label class="col-sm-3 col-form-label">Leave Upto:</label>
+        			<div class="col-sm-5">
+	        			<div class='input-group date datePicker'>
+	        				<input type='text' class="form-control" required="required">
+	        				<span class="input-group-addon">
+	        					<span class="glyphicon glyphicon-calendar"></span>
+	        				</span>
+	        			</div>
+	        		</div>
+        		</div>
+	        </div>
+	      </div>
+				<div class="row">
+      		<div class="col-sm-12">
+      			<div class="form-group">
+      				<label class="">Mention valid reason for leave: </label>
+      				<div class="input-group">
+      					<span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+      					<textarea class="form-control" name="comment" placeholder="Mention valid reason for leave..." required="required"></textarea>
+      				</div>
+      			</div>
+      		</div>
+        </div>
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="form-group">
+							<label class="">Status:</label>
+							<div class="col-md-12 pull-right">
+								<div class="form-check form-check-inline col-md-3">
+									<label class="form-check-label">
+										<input class="form-check-input" type="radio" name="status" value="T" checked> Approved
+									</label>
+								</div>
+								<div class="form-check form-check-inline col-md-3">
+									<label class="form-check-label">
+										<input class="form-check-input" type="radio" name="status" value="F"> Rejected
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Apply</button>
+      </div>
+    </div>
+  </div>
+	</form>
+</div>
