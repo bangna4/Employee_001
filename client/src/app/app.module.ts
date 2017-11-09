@@ -28,6 +28,7 @@ import { EmployeeComponent } from './components/employee/employee.component';
 import { ProjectComponent } from './components/project/project.component';
 import { LeaveComponent } from './components/leave/leave.component';
 import { EmployeeListComponent } from './components/employee-list/employee-list.component';
+import { EmployeeEditComponent } from './components/employee-edit/employee-edit.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { EmployeeListComponent } from './components/employee-list/employee-list.
     EmployeeComponent,
     ProjectComponent,
     LeaveComponent,
-    EmployeeListComponent
+    EmployeeListComponent,
+    EmployeeEditComponent
   ],
   imports: [
     BrowserModule,
